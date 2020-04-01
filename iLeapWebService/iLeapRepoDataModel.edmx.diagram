@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="01570b361faf41378b86a98a32f7c977" Name="Diagram1">
+        <EntityTypeShape EntityType="iLeapRepoModel.TAKAFUL_MDL_AProductionScheduler" Width="1.5" PointX="5.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="iLeapRepoModel.TAKAFUL_MDL_MainenanceWorkOrderList" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="iLeapRepoModel.TAKAFUL_MDL_Maintaintechnicianslist" Width="1.5" PointX="7.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="iLeapRepoModel.TAKAFUL_MDL_MaintenanceAssetID" Width="1.5" PointX="7.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="iLeapRepoModel.TAKAFUL_MDL_MaintenanceEquipmentMaterials" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="iLeapRepoModel.TAKAFUL_MDL_MaintenanceWorkOrder" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="iLeapRepoModel.TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" ManuallyRouted="false" />
+        <AssociationConnector Association="iLeapRepoModel.TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

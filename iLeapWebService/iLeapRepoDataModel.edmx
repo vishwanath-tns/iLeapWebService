@@ -1,0 +1,728 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="iLeapRepoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TAKAFUL_MDL_AProductionScheduler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LMB" Type="bigint" />
+          <Property Name="LMD" Type="datetime" />
+          <Property Name="CRD" Type="datetime" />
+          <Property Name="CRB" Type="bigint" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="ReferenceNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="200" />
+          <Property Name="DaysNeededToManufacture1Unit" Type="bigint" />
+          <Property Name="QuantityNeeded" Type="bigint" />
+          <Property Name="MachineType" Type="nvarchar" MaxLength="2000" />
+          <Property Name="DateStarted" Type="date" />
+          <Property Name="ExpectedManufactureFinishDate" Type="date" />
+          <Property Name="MachineCapacity" Type="bigint" />
+          <Property Name="ProductName_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="MachineType_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="DaysToProduceTotalQuantity" Type="bigint" />
+          <Property Name="MachineStatus_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="Instruction" Type="nvarchar(max)" />
+          <Property Name="MachineStatus" Type="nvarchar" MaxLength="2000" />
+          <Property Name="LineA" Type="xml" />
+          <Property Name="LineB" Type="xml" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+          <Property Name="LineStatus" Type="nvarchar(max)" />
+          <Property Name="LineStatus2" Type="nvarchar" MaxLength="2000" />
+          <Property Name="RescheduleDate" Type="date" />
+          <Property Name="LineStatus3" Type="nvarchar(max)" />
+          <Property Name="LineStatus4" Type="nvarchar" MaxLength="2000" />
+          <Property Name="InventoryStatus" Type="nvarchar" MaxLength="2000" />
+          <Property Name="DelayedDays" Type="bigint" />
+          <Property Name="ProductionLossesCost" Type="nvarchar" MaxLength="200" />
+          <Property Name="sakthiemailhidden" Type="nvarchar" MaxLength="200" />
+          <Property Name="CustomerName_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="RescheduledEndDate" Type="date" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Quantity" Type="numeric" Precision="25" Scale="2" />
+          <Property Name="DaysToProduceTotalAmount" Type="numeric" Precision="25" Scale="2" />
+          <Property Name="ActualCycleTime" Type="numeric" Precision="25" Scale="2" />
+          <Property Name="IdealCycleTime" Type="numeric" Precision="25" Scale="2" />
+          <Property Name="Noofnondefects" Type="bigint" />
+          <Property Name="idealcycletimeint" Type="bigint" />
+          <Property Name="Quality" Type="bigint" />
+          <Property Name="PlannedMachineRunTime" Type="bigint" />
+          <Property Name="ActualMachineRunTIme" Type="bigint" />
+          <Property Name="totaltimein1day" Type="bigint" />
+          <Property Name="delaydays" Type="bigint" />
+          <Property Name="DeliveredQuantity" Type="bigint" />
+          <Property Name="Breakdown" Type="bigint" />
+        </EntityType>
+        <EntityType Name="TAKAFUL_MDL_MainenanceWorkOrderList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LMB" Type="bigint" />
+          <Property Name="LMD" Type="datetime" />
+          <Property Name="CRD" Type="datetime" />
+          <Property Name="CRB" Type="bigint" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="ReferenceNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="TaskID" Type="bigint" />
+          <Property Name="JobDone" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ActionTaken" Type="nvarchar(max)" />
+          <Property Name="JobDone_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="TechnicianName" Type="nvarchar" MaxLength="200" />
+          <Property Name="TechnicianNameList_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="TechnicianNameList" Type="nvarchar" MaxLength="2000" />
+          <Property Name="TimeTaken" Type="numeric" Precision="25" Scale="2" />
+          <Property Name="EndTime" Type="time" Precision="7" />
+          <Property Name="StartTime" Type="time" Precision="7" />
+          <Property Name="DaysTaken" Type="bigint" />
+          <Property Name="DateStart" Type="date" />
+          <Property Name="DateFinish" Type="date" />
+          <Property Name="temperatureAPI" Type="numeric" Precision="25" Scale="5" />
+        </EntityType>
+        <EntityType Name="TAKAFUL_MDL_Maintaintechnicianslist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LMB" Type="bigint" />
+          <Property Name="LMD" Type="datetime" />
+          <Property Name="CRD" Type="datetime" />
+          <Property Name="CRB" Type="bigint" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="name" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TAKAFUL_MDL_MaintenanceAssetID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LMB" Type="bigint" />
+          <Property Name="LMD" Type="datetime" />
+          <Property Name="CRD" Type="datetime" />
+          <Property Name="CRB" Type="bigint" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="Equipment" Type="nvarchar" MaxLength="200" />
+          <Property Name="AssetID" Type="nvarchar" MaxLength="200" />
+          <Property Name="EquipmentLocationCode" Type="nvarchar" MaxLength="200" />
+          <Property Name="EquipmentSubCategory" Type="nvarchar" MaxLength="200" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TAKAFUL_MDL_MaintenanceEquipmentMaterials">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LMB" Type="bigint" />
+          <Property Name="LMD" Type="datetime" />
+          <Property Name="CRD" Type="datetime" />
+          <Property Name="CRB" Type="bigint" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="ReferenceNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="EquipmentMaterial" Type="nvarchar" MaxLength="200" />
+          <Property Name="Quantity" Type="bigint" />
+          <Property Name="NeedToPurchase" Type="nvarchar" MaxLength="2000" />
+          <Property Name="PricePerUnit" Type="numeric" Precision="25" Scale="2" />
+          <Property Name="ActualPrice" Type="numeric" Precision="25" Scale="2" />
+          <Property Name="NeedToPurchase_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="QuantityDouble" Type="numeric" Precision="25" Scale="2" />
+        </EntityType>
+        <EntityType Name="TAKAFUL_MDL_MaintenanceWorkOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LMB" Type="bigint" />
+          <Property Name="LMD" Type="datetime" />
+          <Property Name="CRD" Type="datetime" />
+          <Property Name="CRB" Type="bigint" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="ReferenceNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ActualJobFinishDate" Type="date" />
+          <Property Name="AssetID" Type="nvarchar" MaxLength="200" />
+          <Property Name="AssignTechnician" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Code" Type="bigint" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="EquipmentLocationCode" Type="nvarchar" MaxLength="200" />
+          <Property Name="EquipmentName" Type="nvarchar" MaxLength="200" />
+          <Property Name="JobPlan" Type="nvarchar" MaxLength="200" />
+          <Property Name="MainCategory" Type="nvarchar" MaxLength="2000" />
+          <Property Name="MaintenanceManagerComments" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Priority" Type="nvarchar" MaxLength="2000" />
+          <Property Name="ReportDate" Type="date" />
+          <Property Name="ReportTime" Type="time" Precision="7" />
+          <Property Name="SafetyPlan" Type="nvarchar" MaxLength="200" />
+          <Property Name="ScheduleEndDate" Type="date" />
+          <Property Name="ScheduleStartDate" Type="date" />
+          <Property Name="Status" Type="nvarchar" MaxLength="2000" />
+          <Property Name="TimeFinish" Type="time" Precision="7" />
+          <Property Name="TimeStarted" Type="time" Precision="7" />
+          <Property Name="TimeTaken" Type="time" Precision="7" />
+          <Property Name="TimeTakenDouble" Type="numeric" Precision="25" Scale="2" />
+          <Property Name="TotalEquipmentMaterialCost" Type="numeric" Precision="25" Scale="2" />
+          <Property Name="WorkType" Type="nvarchar" MaxLength="2000" />
+          <Property Name="AssignTechnician_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="MainCategory_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="MaintenanceManagerComments_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="Priority_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="Status_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="WorkType_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="WorkOrderRequestorName" Type="nvarchar" MaxLength="200" />
+          <Property Name="MaintenanceRequestDescription" Type="nvarchar(max)" />
+          <Property Name="Equipmentv2_Value" Type="nvarchar" MaxLength="200" />
+          <Property Name="Equipmentv2" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Image" Type="xml" />
+          <Property Name="SubCategory" Type="nvarchar" MaxLength="200" />
+          <Property Name="Image2" Type="xml" />
+          <Property Name="LineBImage" Type="xml" />
+          <Property Name="emailkiruhiddenbcc" Type="nvarchar" MaxLength="200" />
+          <Property Name="emailsakthihidden" Type="nvarchar" MaxLength="200" />
+          <Property Name="ActualCycletime" Type="numeric" Precision="25" Scale="2" />
+          <Property Name="EquipmentIdealCycleTime" Type="numeric" Precision="25" Scale="2" />
+          <Property Name="TemperatureAPI" Type="numeric" Precision="25" Scale="5" />
+        </EntityType>
+        <EntityType Name="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials">
+          <Key>
+            <PropertyRef Name="MaintenanceWorkOrder_Id" />
+            <PropertyRef Name="MaintenanceEquipmentMaterials_Id" />
+          </Key>
+          <Property Name="MaintenanceWorkOrder_Id" Type="bigint" Nullable="false" />
+          <Property Name="MaintenanceEquipmentMaterials_Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList">
+          <Key>
+            <PropertyRef Name="MaintenanceWorkOrder_Id" />
+            <PropertyRef Name="MainenanceWorkOrderList_Id" />
+          </Key>
+          <Property Name="MaintenanceWorkOrder_Id" Type="bigint" Nullable="false" />
+          <Property Name="MainenanceWorkOrderList_Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials_CId">
+          <End Role="TAKAFUL_MDL_MaintenanceEquipmentMaterials" Type="Self.TAKAFUL_MDL_MaintenanceEquipmentMaterials" Multiplicity="1" />
+          <End Role="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" Type="Self.TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAKAFUL_MDL_MaintenanceEquipmentMaterials">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials">
+              <PropertyRef Name="MaintenanceEquipmentMaterials_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials_PId">
+          <End Role="TAKAFUL_MDL_MaintenanceWorkOrder" Type="Self.TAKAFUL_MDL_MaintenanceWorkOrder" Multiplicity="1" />
+          <End Role="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" Type="Self.TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAKAFUL_MDL_MaintenanceWorkOrder">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials">
+              <PropertyRef Name="MaintenanceWorkOrder_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList_CId">
+          <End Role="TAKAFUL_MDL_MainenanceWorkOrderList" Type="Self.TAKAFUL_MDL_MainenanceWorkOrderList" Multiplicity="1" />
+          <End Role="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" Type="Self.TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAKAFUL_MDL_MainenanceWorkOrderList">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList">
+              <PropertyRef Name="MainenanceWorkOrderList_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList_PId">
+          <End Role="TAKAFUL_MDL_MaintenanceWorkOrder" Type="Self.TAKAFUL_MDL_MaintenanceWorkOrder" Multiplicity="1" />
+          <End Role="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" Type="Self.TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAKAFUL_MDL_MaintenanceWorkOrder">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList">
+              <PropertyRef Name="MaintenanceWorkOrder_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="iLeapRepoModelStoreContainer">
+          <EntitySet Name="TAKAFUL_MDL_AProductionScheduler" EntityType="Self.TAKAFUL_MDL_AProductionScheduler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAKAFUL_MDL_MainenanceWorkOrderList" EntityType="Self.TAKAFUL_MDL_MainenanceWorkOrderList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAKAFUL_MDL_Maintaintechnicianslist" EntityType="Self.TAKAFUL_MDL_Maintaintechnicianslist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAKAFUL_MDL_MaintenanceAssetID" EntityType="Self.TAKAFUL_MDL_MaintenanceAssetID" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAKAFUL_MDL_MaintenanceEquipmentMaterials" EntityType="Self.TAKAFUL_MDL_MaintenanceEquipmentMaterials" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAKAFUL_MDL_MaintenanceWorkOrder" EntityType="Self.TAKAFUL_MDL_MaintenanceWorkOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" EntityType="Self.TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" EntityType="Self.TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials_CId" Association="Self.FK_TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials_CId">
+            <End Role="TAKAFUL_MDL_MaintenanceEquipmentMaterials" EntitySet="TAKAFUL_MDL_MaintenanceEquipmentMaterials" />
+            <End Role="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" EntitySet="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials_PId" Association="Self.FK_TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials_PId">
+            <End Role="TAKAFUL_MDL_MaintenanceWorkOrder" EntitySet="TAKAFUL_MDL_MaintenanceWorkOrder" />
+            <End Role="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" EntitySet="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList_CId" Association="Self.FK_TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList_CId">
+            <End Role="TAKAFUL_MDL_MainenanceWorkOrderList" EntitySet="TAKAFUL_MDL_MainenanceWorkOrderList" />
+            <End Role="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" EntitySet="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList_PId" Association="Self.FK_TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList_PId">
+            <End Role="TAKAFUL_MDL_MaintenanceWorkOrder" EntitySet="TAKAFUL_MDL_MaintenanceWorkOrder" />
+            <End Role="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" EntitySet="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="iLeapRepoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TAKAFUL_MDL_AProductionScheduler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LMB" Type="Int64" />
+          <Property Name="LMD" Type="DateTime" Precision="3" />
+          <Property Name="CRD" Type="DateTime" Precision="3" />
+          <Property Name="CRB" Type="Int64" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="ReferenceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DaysNeededToManufacture1Unit" Type="Int64" />
+          <Property Name="QuantityNeeded" Type="Int64" />
+          <Property Name="MachineType" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="DateStarted" Type="DateTime" Precision="0" />
+          <Property Name="ExpectedManufactureFinishDate" Type="DateTime" Precision="0" />
+          <Property Name="MachineCapacity" Type="Int64" />
+          <Property Name="ProductName_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MachineType_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DaysToProduceTotalQuantity" Type="Int64" />
+          <Property Name="MachineStatus_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Instruction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MachineStatus" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="LineA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LineB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LineStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LineStatus2" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="RescheduleDate" Type="DateTime" Precision="0" />
+          <Property Name="LineStatus3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LineStatus4" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="InventoryStatus" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="DelayedDays" Type="Int64" />
+          <Property Name="ProductionLossesCost" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="sakthiemailhidden" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RescheduledEndDate" Type="DateTime" Precision="0" />
+          <Property Name="CustomerName" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="DaysToProduceTotalAmount" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="ActualCycleTime" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="IdealCycleTime" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="Noofnondefects" Type="Int64" />
+          <Property Name="idealcycletimeint" Type="Int64" />
+          <Property Name="Quality" Type="Int64" />
+          <Property Name="PlannedMachineRunTime" Type="Int64" />
+          <Property Name="ActualMachineRunTIme" Type="Int64" />
+          <Property Name="totaltimein1day" Type="Int64" />
+          <Property Name="delaydays" Type="Int64" />
+          <Property Name="DeliveredQuantity" Type="Int64" />
+          <Property Name="Breakdown" Type="Int64" />
+        </EntityType>
+        <EntityType Name="TAKAFUL_MDL_MainenanceWorkOrderList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LMB" Type="Int64" />
+          <Property Name="LMD" Type="DateTime" Precision="3" />
+          <Property Name="CRD" Type="DateTime" Precision="3" />
+          <Property Name="CRB" Type="Int64" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="ReferenceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TaskID" Type="Int64" />
+          <Property Name="JobDone" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="ActionTaken" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="JobDone_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicianName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicianNameList_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TechnicianNameList" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="TimeTaken" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="EndTime" Type="Time" Precision="7" />
+          <Property Name="StartTime" Type="Time" Precision="7" />
+          <Property Name="DaysTaken" Type="Int64" />
+          <Property Name="DateStart" Type="DateTime" Precision="0" />
+          <Property Name="DateFinish" Type="DateTime" Precision="0" />
+          <Property Name="temperatureAPI" Type="Decimal" Precision="25" Scale="5" />
+          <NavigationProperty Name="TAKAFUL_MDL_MaintenanceWorkOrder" Relationship="Self.TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" FromRole="TAKAFUL_MDL_MainenanceWorkOrderList" ToRole="TAKAFUL_MDL_MaintenanceWorkOrder" />
+        </EntityType>
+        <EntityType Name="TAKAFUL_MDL_Maintaintechnicianslist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LMB" Type="Int64" />
+          <Property Name="LMD" Type="DateTime" Precision="3" />
+          <Property Name="CRD" Type="DateTime" Precision="3" />
+          <Property Name="CRB" Type="Int64" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TAKAFUL_MDL_MaintenanceAssetID">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LMB" Type="Int64" />
+          <Property Name="LMD" Type="DateTime" Precision="3" />
+          <Property Name="CRD" Type="DateTime" Precision="3" />
+          <Property Name="CRB" Type="Int64" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="Equipment" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AssetID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EquipmentLocationCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EquipmentSubCategory" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TAKAFUL_MDL_MaintenanceEquipmentMaterials">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LMB" Type="Int64" />
+          <Property Name="LMD" Type="DateTime" Precision="3" />
+          <Property Name="CRD" Type="DateTime" Precision="3" />
+          <Property Name="CRB" Type="Int64" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="ReferenceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EquipmentMaterial" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int64" />
+          <Property Name="NeedToPurchase" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="PricePerUnit" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="ActualPrice" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="NeedToPurchase_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="QuantityDouble" Type="Decimal" Precision="25" Scale="2" />
+          <NavigationProperty Name="TAKAFUL_MDL_MaintenanceWorkOrder" Relationship="Self.TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" FromRole="TAKAFUL_MDL_MaintenanceEquipmentMaterials" ToRole="TAKAFUL_MDL_MaintenanceWorkOrder" />
+        </EntityType>
+        <EntityType Name="TAKAFUL_MDL_MaintenanceWorkOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LMB" Type="Int64" />
+          <Property Name="LMD" Type="DateTime" Precision="3" />
+          <Property Name="CRD" Type="DateTime" Precision="3" />
+          <Property Name="CRB" Type="Int64" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="ReferenceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ActualJobFinishDate" Type="DateTime" Precision="0" />
+          <Property Name="AssetID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AssignTechnician" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="EquipmentLocationCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EquipmentName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="JobPlan" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MainCategory" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="MaintenanceManagerComments" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Priority" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="ReportDate" Type="DateTime" Precision="0" />
+          <Property Name="ReportTime" Type="Time" Precision="7" />
+          <Property Name="SafetyPlan" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ScheduleEndDate" Type="DateTime" Precision="0" />
+          <Property Name="ScheduleStartDate" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="TimeFinish" Type="Time" Precision="7" />
+          <Property Name="TimeStarted" Type="Time" Precision="7" />
+          <Property Name="TimeTaken" Type="Time" Precision="7" />
+          <Property Name="TimeTakenDouble" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="TotalEquipmentMaterialCost" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="WorkType" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="AssignTechnician_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MainCategory_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MaintenanceManagerComments_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Priority_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Status_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="WorkType_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="WorkOrderRequestorName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MaintenanceRequestDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Equipmentv2_Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Equipmentv2" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubCategory" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Image2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LineBImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="emailkiruhiddenbcc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="emailsakthihidden" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ActualCycletime" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="EquipmentIdealCycleTime" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="TemperatureAPI" Type="Decimal" Precision="25" Scale="5" />
+          <NavigationProperty Name="TAKAFUL_MDL_MaintenanceEquipmentMaterials" Relationship="Self.TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" FromRole="TAKAFUL_MDL_MaintenanceWorkOrder" ToRole="TAKAFUL_MDL_MaintenanceEquipmentMaterials" />
+          <NavigationProperty Name="TAKAFUL_MDL_MainenanceWorkOrderList" Relationship="Self.TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" FromRole="TAKAFUL_MDL_MaintenanceWorkOrder" ToRole="TAKAFUL_MDL_MainenanceWorkOrderList" />
+        </EntityType>
+        <Association Name="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials">
+          <End Role="TAKAFUL_MDL_MaintenanceEquipmentMaterials" Type="Self.TAKAFUL_MDL_MaintenanceEquipmentMaterials" Multiplicity="*" />
+          <End Role="TAKAFUL_MDL_MaintenanceWorkOrder" Type="Self.TAKAFUL_MDL_MaintenanceWorkOrder" Multiplicity="*" />
+        </Association>
+        <Association Name="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList">
+          <End Role="TAKAFUL_MDL_MainenanceWorkOrderList" Type="Self.TAKAFUL_MDL_MainenanceWorkOrderList" Multiplicity="*" />
+          <End Role="TAKAFUL_MDL_MaintenanceWorkOrder" Type="Self.TAKAFUL_MDL_MaintenanceWorkOrder" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="iLeapRepoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TAKAFUL_MDL_AProductionScheduler" EntityType="Self.TAKAFUL_MDL_AProductionScheduler" />
+          <EntitySet Name="TAKAFUL_MDL_MainenanceWorkOrderList" EntityType="Self.TAKAFUL_MDL_MainenanceWorkOrderList" />
+          <EntitySet Name="TAKAFUL_MDL_Maintaintechnicianslist" EntityType="Self.TAKAFUL_MDL_Maintaintechnicianslist" />
+          <EntitySet Name="TAKAFUL_MDL_MaintenanceAssetID" EntityType="Self.TAKAFUL_MDL_MaintenanceAssetID" />
+          <EntitySet Name="TAKAFUL_MDL_MaintenanceEquipmentMaterials" EntityType="Self.TAKAFUL_MDL_MaintenanceEquipmentMaterials" />
+          <EntitySet Name="TAKAFUL_MDL_MaintenanceWorkOrder" EntityType="Self.TAKAFUL_MDL_MaintenanceWorkOrder" />
+          <AssociationSet Name="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" Association="Self.TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials">
+            <End Role="TAKAFUL_MDL_MaintenanceEquipmentMaterials" EntitySet="TAKAFUL_MDL_MaintenanceEquipmentMaterials" />
+            <End Role="TAKAFUL_MDL_MaintenanceWorkOrder" EntitySet="TAKAFUL_MDL_MaintenanceWorkOrder" />
+          </AssociationSet>
+          <AssociationSet Name="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" Association="Self.TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList">
+            <End Role="TAKAFUL_MDL_MainenanceWorkOrderList" EntitySet="TAKAFUL_MDL_MainenanceWorkOrderList" />
+            <End Role="TAKAFUL_MDL_MaintenanceWorkOrder" EntitySet="TAKAFUL_MDL_MaintenanceWorkOrder" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="iLeapRepoModelStoreContainer" CdmEntityContainer="iLeapRepoEntities">
+          <EntitySetMapping Name="TAKAFUL_MDL_AProductionScheduler">
+            <EntityTypeMapping TypeName="iLeapRepoModel.TAKAFUL_MDL_AProductionScheduler">
+              <MappingFragment StoreEntitySet="TAKAFUL_MDL_AProductionScheduler">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LMB" ColumnName="LMB" />
+                <ScalarProperty Name="LMD" ColumnName="LMD" />
+                <ScalarProperty Name="CRD" ColumnName="CRD" />
+                <ScalarProperty Name="CRB" ColumnName="CRB" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="DaysNeededToManufacture1Unit" ColumnName="DaysNeededToManufacture1Unit" />
+                <ScalarProperty Name="QuantityNeeded" ColumnName="QuantityNeeded" />
+                <ScalarProperty Name="MachineType" ColumnName="MachineType" />
+                <ScalarProperty Name="DateStarted" ColumnName="DateStarted" />
+                <ScalarProperty Name="ExpectedManufactureFinishDate" ColumnName="ExpectedManufactureFinishDate" />
+                <ScalarProperty Name="MachineCapacity" ColumnName="MachineCapacity" />
+                <ScalarProperty Name="ProductName_Value" ColumnName="ProductName_Value" />
+                <ScalarProperty Name="MachineType_Value" ColumnName="MachineType_Value" />
+                <ScalarProperty Name="DaysToProduceTotalQuantity" ColumnName="DaysToProduceTotalQuantity" />
+                <ScalarProperty Name="MachineStatus_Value" ColumnName="MachineStatus_Value" />
+                <ScalarProperty Name="Instruction" ColumnName="Instruction" />
+                <ScalarProperty Name="MachineStatus" ColumnName="MachineStatus" />
+                <ScalarProperty Name="LineA" ColumnName="LineA" />
+                <ScalarProperty Name="LineB" ColumnName="LineB" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="LineStatus" ColumnName="LineStatus" />
+                <ScalarProperty Name="LineStatus2" ColumnName="LineStatus2" />
+                <ScalarProperty Name="RescheduleDate" ColumnName="RescheduleDate" />
+                <ScalarProperty Name="LineStatus3" ColumnName="LineStatus3" />
+                <ScalarProperty Name="LineStatus4" ColumnName="LineStatus4" />
+                <ScalarProperty Name="InventoryStatus" ColumnName="InventoryStatus" />
+                <ScalarProperty Name="DelayedDays" ColumnName="DelayedDays" />
+                <ScalarProperty Name="ProductionLossesCost" ColumnName="ProductionLossesCost" />
+                <ScalarProperty Name="sakthiemailhidden" ColumnName="sakthiemailhidden" />
+                <ScalarProperty Name="CustomerName_Value" ColumnName="CustomerName_Value" />
+                <ScalarProperty Name="RescheduledEndDate" ColumnName="RescheduledEndDate" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="DaysToProduceTotalAmount" ColumnName="DaysToProduceTotalAmount" />
+                <ScalarProperty Name="ActualCycleTime" ColumnName="ActualCycleTime" />
+                <ScalarProperty Name="IdealCycleTime" ColumnName="IdealCycleTime" />
+                <ScalarProperty Name="Noofnondefects" ColumnName="Noofnondefects" />
+                <ScalarProperty Name="idealcycletimeint" ColumnName="idealcycletimeint" />
+                <ScalarProperty Name="Quality" ColumnName="Quality" />
+                <ScalarProperty Name="PlannedMachineRunTime" ColumnName="PlannedMachineRunTime" />
+                <ScalarProperty Name="ActualMachineRunTIme" ColumnName="ActualMachineRunTIme" />
+                <ScalarProperty Name="totaltimein1day" ColumnName="totaltimein1day" />
+                <ScalarProperty Name="delaydays" ColumnName="delaydays" />
+                <ScalarProperty Name="DeliveredQuantity" ColumnName="DeliveredQuantity" />
+                <ScalarProperty Name="Breakdown" ColumnName="Breakdown" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAKAFUL_MDL_MainenanceWorkOrderList">
+            <EntityTypeMapping TypeName="iLeapRepoModel.TAKAFUL_MDL_MainenanceWorkOrderList">
+              <MappingFragment StoreEntitySet="TAKAFUL_MDL_MainenanceWorkOrderList">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LMB" ColumnName="LMB" />
+                <ScalarProperty Name="LMD" ColumnName="LMD" />
+                <ScalarProperty Name="CRD" ColumnName="CRD" />
+                <ScalarProperty Name="CRB" ColumnName="CRB" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="JobDone" ColumnName="JobDone" />
+                <ScalarProperty Name="ActionTaken" ColumnName="ActionTaken" />
+                <ScalarProperty Name="JobDone_Value" ColumnName="JobDone_Value" />
+                <ScalarProperty Name="TechnicianName" ColumnName="TechnicianName" />
+                <ScalarProperty Name="TechnicianNameList_Value" ColumnName="TechnicianNameList_Value" />
+                <ScalarProperty Name="TechnicianNameList" ColumnName="TechnicianNameList" />
+                <ScalarProperty Name="TimeTaken" ColumnName="TimeTaken" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="DaysTaken" ColumnName="DaysTaken" />
+                <ScalarProperty Name="DateStart" ColumnName="DateStart" />
+                <ScalarProperty Name="DateFinish" ColumnName="DateFinish" />
+                <ScalarProperty Name="temperatureAPI" ColumnName="temperatureAPI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAKAFUL_MDL_Maintaintechnicianslist">
+            <EntityTypeMapping TypeName="iLeapRepoModel.TAKAFUL_MDL_Maintaintechnicianslist">
+              <MappingFragment StoreEntitySet="TAKAFUL_MDL_Maintaintechnicianslist">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LMB" ColumnName="LMB" />
+                <ScalarProperty Name="LMD" ColumnName="LMD" />
+                <ScalarProperty Name="CRD" ColumnName="CRD" />
+                <ScalarProperty Name="CRB" ColumnName="CRB" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAKAFUL_MDL_MaintenanceAssetID">
+            <EntityTypeMapping TypeName="iLeapRepoModel.TAKAFUL_MDL_MaintenanceAssetID">
+              <MappingFragment StoreEntitySet="TAKAFUL_MDL_MaintenanceAssetID">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LMB" ColumnName="LMB" />
+                <ScalarProperty Name="LMD" ColumnName="LMD" />
+                <ScalarProperty Name="CRD" ColumnName="CRD" />
+                <ScalarProperty Name="CRB" ColumnName="CRB" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="Equipment" ColumnName="Equipment" />
+                <ScalarProperty Name="AssetID" ColumnName="AssetID" />
+                <ScalarProperty Name="EquipmentLocationCode" ColumnName="EquipmentLocationCode" />
+                <ScalarProperty Name="EquipmentSubCategory" ColumnName="EquipmentSubCategory" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAKAFUL_MDL_MaintenanceEquipmentMaterials">
+            <EntityTypeMapping TypeName="iLeapRepoModel.TAKAFUL_MDL_MaintenanceEquipmentMaterials">
+              <MappingFragment StoreEntitySet="TAKAFUL_MDL_MaintenanceEquipmentMaterials">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LMB" ColumnName="LMB" />
+                <ScalarProperty Name="LMD" ColumnName="LMD" />
+                <ScalarProperty Name="CRD" ColumnName="CRD" />
+                <ScalarProperty Name="CRB" ColumnName="CRB" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+                <ScalarProperty Name="EquipmentMaterial" ColumnName="EquipmentMaterial" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="NeedToPurchase" ColumnName="NeedToPurchase" />
+                <ScalarProperty Name="PricePerUnit" ColumnName="PricePerUnit" />
+                <ScalarProperty Name="ActualPrice" ColumnName="ActualPrice" />
+                <ScalarProperty Name="NeedToPurchase_Value" ColumnName="NeedToPurchase_Value" />
+                <ScalarProperty Name="QuantityDouble" ColumnName="QuantityDouble" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAKAFUL_MDL_MaintenanceWorkOrder">
+            <EntityTypeMapping TypeName="iLeapRepoModel.TAKAFUL_MDL_MaintenanceWorkOrder">
+              <MappingFragment StoreEntitySet="TAKAFUL_MDL_MaintenanceWorkOrder">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LMB" ColumnName="LMB" />
+                <ScalarProperty Name="LMD" ColumnName="LMD" />
+                <ScalarProperty Name="CRD" ColumnName="CRD" />
+                <ScalarProperty Name="CRB" ColumnName="CRB" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+                <ScalarProperty Name="ActualJobFinishDate" ColumnName="ActualJobFinishDate" />
+                <ScalarProperty Name="AssetID" ColumnName="AssetID" />
+                <ScalarProperty Name="AssignTechnician" ColumnName="AssignTechnician" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="EquipmentLocationCode" ColumnName="EquipmentLocationCode" />
+                <ScalarProperty Name="EquipmentName" ColumnName="EquipmentName" />
+                <ScalarProperty Name="JobPlan" ColumnName="JobPlan" />
+                <ScalarProperty Name="MainCategory" ColumnName="MainCategory" />
+                <ScalarProperty Name="MaintenanceManagerComments" ColumnName="MaintenanceManagerComments" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+                <ScalarProperty Name="ReportTime" ColumnName="ReportTime" />
+                <ScalarProperty Name="SafetyPlan" ColumnName="SafetyPlan" />
+                <ScalarProperty Name="ScheduleEndDate" ColumnName="ScheduleEndDate" />
+                <ScalarProperty Name="ScheduleStartDate" ColumnName="ScheduleStartDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TimeFinish" ColumnName="TimeFinish" />
+                <ScalarProperty Name="TimeStarted" ColumnName="TimeStarted" />
+                <ScalarProperty Name="TimeTaken" ColumnName="TimeTaken" />
+                <ScalarProperty Name="TimeTakenDouble" ColumnName="TimeTakenDouble" />
+                <ScalarProperty Name="TotalEquipmentMaterialCost" ColumnName="TotalEquipmentMaterialCost" />
+                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+                <ScalarProperty Name="AssignTechnician_Value" ColumnName="AssignTechnician_Value" />
+                <ScalarProperty Name="MainCategory_Value" ColumnName="MainCategory_Value" />
+                <ScalarProperty Name="MaintenanceManagerComments_Value" ColumnName="MaintenanceManagerComments_Value" />
+                <ScalarProperty Name="Priority_Value" ColumnName="Priority_Value" />
+                <ScalarProperty Name="Status_Value" ColumnName="Status_Value" />
+                <ScalarProperty Name="WorkType_Value" ColumnName="WorkType_Value" />
+                <ScalarProperty Name="WorkOrderRequestorName" ColumnName="WorkOrderRequestorName" />
+                <ScalarProperty Name="MaintenanceRequestDescription" ColumnName="MaintenanceRequestDescription" />
+                <ScalarProperty Name="Equipmentv2_Value" ColumnName="Equipmentv2_Value" />
+                <ScalarProperty Name="Equipmentv2" ColumnName="Equipmentv2" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="SubCategory" ColumnName="SubCategory" />
+                <ScalarProperty Name="Image2" ColumnName="Image2" />
+                <ScalarProperty Name="LineBImage" ColumnName="LineBImage" />
+                <ScalarProperty Name="emailkiruhiddenbcc" ColumnName="emailkiruhiddenbcc" />
+                <ScalarProperty Name="emailsakthihidden" ColumnName="emailsakthihidden" />
+                <ScalarProperty Name="ActualCycletime" ColumnName="ActualCycletime" />
+                <ScalarProperty Name="EquipmentIdealCycleTime" ColumnName="EquipmentIdealCycleTime" />
+                <ScalarProperty Name="TemperatureAPI" ColumnName="TemperatureAPI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" TypeName="iLeapRepoModel.TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials" StoreEntitySet="TAKAFUL_MDL_MaintenanceWorkOrder_MaintainEquipmentMaterials">
+            <EndProperty Name="TAKAFUL_MDL_MaintenanceEquipmentMaterials">
+              <ScalarProperty Name="Id" ColumnName="MaintenanceEquipmentMaterials_Id" />
+            </EndProperty>
+            <EndProperty Name="TAKAFUL_MDL_MaintenanceWorkOrder">
+              <ScalarProperty Name="Id" ColumnName="MaintenanceWorkOrder_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" TypeName="iLeapRepoModel.TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList" StoreEntitySet="TAKAFUL_MDL_MaintenanceWorkOrder_MaintenanceWorkOrderList">
+            <EndProperty Name="TAKAFUL_MDL_MainenanceWorkOrderList">
+              <ScalarProperty Name="Id" ColumnName="MainenanceWorkOrderList_Id" />
+            </EndProperty>
+            <EndProperty Name="TAKAFUL_MDL_MaintenanceWorkOrder">
+              <ScalarProperty Name="Id" ColumnName="MaintenanceWorkOrder_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
