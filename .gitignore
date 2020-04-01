@@ -1,3 +1,4 @@
 /packages
 /iLeapWebService/bin
 /iLeapWebService/obj
+/iLeapWebService/*.config
